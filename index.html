@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Клиника «Рождение»</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <div class="layout">
+      <header class="header panel">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">✚</div>
+          <div>
+            <p class="brand-title">Клиника «Рождение»</p>
+            <p class="brand-subtitle">с заботой, как о самом дорогом</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#about">О нас</a>
+          <a href="#services">Услуги</a>
+          <a href="#team">Специалисты</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="#contacts" class="btn btn-primary">Записаться</a>
+      </header>
+
+      <main>
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Родильный центр и женская клиника</p>
+            <h1>Клиника «Рождение»</h1>
+            <p class="tagline">с заботой, как о самом дорогом</p>
+            <p class="hero-text">
+              Полный цикл поддержки будущей мамы: от ведения беременности до
+              послеродового сопровождения и заботы о новорожденном.
+            </p>
+            <div class="hero-actions">
+              <a href="#services" class="btn btn-primary">Смотреть услуги</a>
+              <a href="#contacts" class="btn btn-secondary">Записаться на прием</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div
+              class="hero-photo"
+              role="img"
+              aria-label="Фото роженицы до родов"
+              style="--hero-photo: var(--hero-photo-url)"
+            ></div>
+            <p class="replace-hint">
+              Вставьте свое фото: измените <code>--hero-photo-url</code> в
+              начале файла <code>styles.css</code>.
+            </p>
+          </div>
+        </section>
+
+        <section id="about" class="about panel">
+          <div>
+            <p class="eyebrow">О центре</p>
+            <h2>Спокойная и безопасная среда для мамы и малыша</h2>
+            <p>
+              Мы объединяем опыт акушеров-гинекологов, неонатологов, врачей УЗИ
+              и педиатров, чтобы сопровождать каждую семью на всех этапах.
+            </p>
+          </div>
+          <ul class="about-points">
+            <li>Индивидуальный план ведения беременности</li>
+            <li>Подготовка к естественным и оперативным родам</li>
+            <li>Современное оборудование и внимательная команда</li>
+            <li>Поддержка после родов и неонатология</li>
+          </ul>
+        </section>
+
+        <section id="services" class="services">
+          <div class="section-head">
+            <h2>Наши <span>услуги</span></h2>
+            <p>Нажмите карточку, чтобы открыть подробности</p>
+          </div>
+          <div class="services-track" role="list">
+            <a class="service-tile panel" href="#service-natural">
+              <div class="service-top">
+                <h3 class="service-title">Естественные роды</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Классическое ведение родов с поддержкой команды.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-natural)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-conservative">
+              <div class="service-top">
+                <h3 class="service-title">Консервативные роды</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Бережный подход и мониторинг без лишних вмешательств.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-conservative)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-c-section">
+              <div class="service-top">
+                <h3 class="service-title">Кесарево сечение</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Плановое и экстренное родоразрешение в безопасном формате.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-c-section)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-support">
+              <div class="service-top">
+                <h3 class="service-title">Роды с сопровождением</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Индивидуальный план и поддержка врача в родзале.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-support)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-pregnancy">
+              <div class="service-top">
+                <h3 class="service-title">Ведение беременности</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Наблюдение по всем триместрам и плановые скрининги.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-pregnancy)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-checkup">
+              <div class="service-top">
+                <h3 class="service-title">Женский чек-ап</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Комплексная диагностика и рекомендации по здоровью.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-checkup)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-postpartum">
+              <div class="service-top">
+                <h3 class="service-title">Послеродовое сопровождение</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Поддержка мамы и малыша в первые месяцы после родов.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-postpartum)"
+                ></div>
+              </div>
+            </a>
+            <a class="service-tile panel" href="#service-ultrasound">
+              <div class="service-top">
+                <h3 class="service-title">Гинекологическое УЗИ</h3>
+                <span class="service-arrow" aria-hidden="true">↗</span>
+              </div>
+              <p class="service-excerpt">
+                Плановые и экспертные исследования на современном оборудовании.
+              </p>
+              <div class="service-photo-wrap">
+                <div
+                  class="service-photo"
+                  style="--service-photo: var(--service-photo-ultrasound)"
+                ></div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="team" class="team">
+          <div class="section-head team-head">
+            <h2>
+              Команда ведущих <span>профессионалов своего дела</span>
+            </h2>
+            <div class="team-nav" aria-label="Навигация по команде">
+              <button type="button" class="team-nav-btn" data-team-nav="prev">
+                ‹
+              </button>
+              <button type="button" class="team-nav-btn" data-team-nav="next">
+                ›
+              </button>
+            </div>
+          </div>
+
+          <div class="team-row">
+            <a class="doctor-tile panel" href="#doc-vlasova">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-vlasova)"
+              ></div>
+              <h3>Власова А. Е.</h3>
+              <p>Акушер-гинеколог</p>
+            </a>
+            <a class="doctor-tile panel" href="#doc-ermolova">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-ermolova)"
+              ></div>
+              <h3>Ермолова Р. Ю.</h3>
+              <p>Акушер-гинеколог</p>
+            </a>
+            <a class="doctor-tile panel" href="#doc-roshchina">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-roshchina)"
+              ></div>
+              <h3>Рощина К. С.</h3>
+              <p>Акушер-гинеколог</p>
+            </a>
+            <a class="doctor-tile panel" href="#doc-morozov">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-morozov)"
+              ></div>
+              <h3>Морозов Р. З.</h3>
+              <p>Педиатр</p>
+            </a>
+            <a class="doctor-tile panel" href="#doc-sokolova">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-sokolova)"
+              ></div>
+              <h3>Соколова И. Д.</h3>
+              <p>Врач УЗИ</p>
+            </a>
+            <a class="doctor-tile panel" href="#doc-panin">
+              <div
+                class="doctor-thumb"
+                style="--doctor-photo: var(--photo-panin)"
+              ></div>
+              <h3>Панин С. А.</h3>
+              <p>Врач-неонатолог</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+          <div class="section-head">
+            <h2>Отзывы пациенток</h2>
+            <p>Квадратные карточки с горизонтальной прокруткой</p>
+          </div>
+          <div class="reviews-row">
+            <article class="review-square panel">
+              <p class="review-date">23 декабря 2024</p>
+              <h3>Марина</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Хочу поблагодарить всех сотрудников роддома за их труд и
+                заботу! Удивительное отношение к мамочкам в этой клинике...
+              </p>
+              <a href="#review-marina">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">27 декабря 2024</p>
+              <h3>Мэри</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Все плановые скрининги проходила у Юлии Юрьевны Дьяченко.
+                Очень внимательный и деликатный специалист...
+              </p>
+              <a href="#review-mary">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">11 января 2025</p>
+              <h3>Пузикова Екатерина</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Рожала в сентябре 2024 у Оксаны Анатольевны Горбулиной. Был
+                большой страх после первых родов, но всё прошло прекрасно...
+              </p>
+              <a href="#review-ekaterina">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">18 января 2025</p>
+              <h3>Ольга</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Вели беременность с первого триместра. Всегда на связи, очень
+                аккуратный подход и понятные рекомендации...
+              </p>
+              <a href="#review-olga">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">02 февраля 2025</p>
+              <h3>Алина</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Делала плановые УЗИ и чек-ап. Все спокойно, без суеты, подробно
+                объясняют результаты и дальнейший план...
+              </p>
+              <a href="#review-alina">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">19 февраля 2025</p>
+              <h3>Светлана</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Отличная команда в родблоке, поддерживали на каждом этапе.
+                Отдельное спасибо неонатологу за внимательность...
+              </p>
+              <a href="#review-svetlana">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">03 марта 2025</p>
+              <h3>Евгения</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                После родов оформила программу сопровождения 0-1 года.
+                Консультации очень помогают в первые месяцы...
+              </p>
+              <a href="#review-evgeniya">Читать полностью</a>
+            </article>
+            <article class="review-square panel">
+              <p class="review-date">14 марта 2025</p>
+              <h3>Татьяна</h3>
+              <p class="review-rating">5 ★</p>
+              <p>
+                Было плановое кесарево, все организовано четко. Врач и
+                анестезиолог заранее все проговорили, было спокойно...
+              </p>
+              <a href="#review-tatyana">Читать полностью</a>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contacts" class="footer panel">
+        <div class="footer-main">
+          <h2>Частный роддом Клиники «Рождение» в Краснодаре</h2>
+          <p><strong>Адрес:</strong> г. Краснодар, ул. Герцена, 265/2</p>
+          <p><strong>Режим работы:</strong> круглосуточно, без выходных</p>
+          <a href="#booking-modal" class="btn btn-primary open-booking-btn">
+            Записаться
+          </a>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?text=%D0%B3.%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%2C%20%D1%83%D0%BB.%20%D0%93%D0%B5%D1%80%D1%86%D0%B5%D0%BD%D0%B0%2C%20265%2F2&z=16"
+            loading="lazy"
+            title="Карта: г. Краснодар, ул. Герцена, 265/2"
+          ></iframe>
+        </div>
+      </footer>
+    </div>
+
+    <div id="doc-vlasova" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-vlasova)"
+          ></div>
+          <div>
+            <h3>Власова Анна Евгеньевна</h3>
+            <p>Акушер-гинеколог, стаж 12 лет, высшая категория</p>
+            <p>Принимает по ДМС</p>
+            <p><strong>Время приема:</strong> Пн, Ср, Пт 09:00-15:00</p>
+            <p>Ведет беременность и консультирует по подготовке к родам.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="doc-ermolova" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-ermolova)"
+          ></div>
+          <div>
+            <h3>Ермолова Раиса Юрьевна</h3>
+            <p>Акушер-гинеколог, стаж 24 года, высшая категория</p>
+            <p>Принимает по ДМС</p>
+            <p><strong>Время приема:</strong> Вт, Чт 10:00-18:00</p>
+            <p>Сопровождает естественные и оперативные роды.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="doc-roshchina" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-roshchina)"
+          ></div>
+          <div>
+            <h3>Рощина Карина Сергеевна</h3>
+            <p>Акушер-гинеколог, стаж 6 лет, 1 категория</p>
+            <p>Принимает по ДМС</p>
+            <p><strong>Время приема:</strong> Пн, Чт 14:00-20:00</p>
+            <p>Проводит консультации и ведение беременности по триместрам.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="doc-morozov" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-morozov)"
+          ></div>
+          <div>
+            <h3>Морозов Руслан Зурабович</h3>
+            <p>Педиатр, стаж 8 лет, высшая категория</p>
+            <p>Принимает по ДМС</p>
+            <p><strong>Время приема:</strong> Пн-Пт 08:00-14:00</p>
+            <p>Сопровождает детей с рождения и после выписки из роддома.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="doc-sokolova" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-sokolova)"
+          ></div>
+          <div>
+            <h3>Соколова Инна Денисовна</h3>
+            <p>Врач УЗИ, стаж 5 лет</p>
+            <p><strong>Время приема:</strong> Вт, Ср, Сб 09:00-16:00</p>
+            <p>Проводит плановые скрининги и гинекологическое УЗИ.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="doc-panin" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#team">Закрыть</a>
+        <div class="modal-profile">
+          <div
+            class="modal-photo"
+            style="--doctor-photo: var(--photo-panin)"
+          ></div>
+          <div>
+            <h3>Панин Сергей Антонович</h3>
+            <p>Врач-неонатолог, стаж 10 лет</p>
+            <p><strong>Время приема:</strong> Пн, Ср, Пт 12:00-19:00</p>
+            <p>Наблюдает новорожденных и проводит послеродовые консультации.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-natural" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Естественные роды</h3>
+          <p>
+            Поддержка акушера-гинеколога, персональный план родов, контроль
+            состояния мамы и малыша в течение всего процесса.
+          </p>
+          <p><strong>Кто принимает:</strong> Власова Анна Евгеньевна</p>
+          <p><strong>Цена:</strong> от 110 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Естественные роды"
+            data-book-price="от 110 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-conservative" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Консервативные роды</h3>
+          <p>
+            Бережное ведение родов с непрерывным мониторингом и тактикой без
+            лишних вмешательств.
+          </p>
+          <p><strong>Кто принимает:</strong> Ермолова Раиса Юрьевна</p>
+          <p><strong>Цена:</strong> от 125 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Консервативные роды"
+            data-book-price="от 125 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-c-section" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Кесарево сечение</h3>
+          <p>
+            Плановое и экстренное оперативное родоразрешение с анестезиологией
+            и послеоперационным наблюдением.
+          </p>
+          <p><strong>Кто принимает:</strong> Рощина Карина Сергеевна</p>
+          <p><strong>Цена:</strong> от 175 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Кесарево сечение"
+            data-book-price="от 175 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-support" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Роды с сопровождением</h3>
+          <p>
+            Индивидуальная тактика ведения и сопровождение команды на каждом
+            этапе до послеродового периода.
+          </p>
+          <p><strong>Кто принимает:</strong> Ермолова Раиса Юрьевна</p>
+          <p><strong>Цена:</strong> от 140 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Роды с сопровождением"
+            data-book-price="от 140 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-pregnancy" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Ведение беременности</h3>
+          <p>
+            Ведение первого, второго и третьего триместра, регулярные
+            консультации, анализы и плановые скрининги.
+          </p>
+          <p><strong>Кто принимает:</strong> Власова Анна Евгеньевна</p>
+          <p><strong>Цена:</strong> от 65 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Ведение беременности"
+            data-book-price="от 65 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-checkup" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Женский чек-ап</h3>
+          <p>
+            Комплексная диагностика женского здоровья: осмотр, анализы и
+            индивидуальные рекомендации врача.
+          </p>
+          <p><strong>Кто принимает:</strong> Рощина Карина Сергеевна</p>
+          <p><strong>Цена:</strong> от 19 900 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Женский чек-ап"
+            data-book-price="от 19 900 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-postpartum" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Послеродовое сопровождение</h3>
+          <p>
+            Программа от 0 до 1 года: контроль восстановления мамы, консультации
+            неонатолога и поддержка семьи.
+          </p>
+          <p><strong>Кто принимает:</strong> Панин Сергей Антонович</p>
+          <p><strong>Цена:</strong> от 34 000 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Послеродовое сопровождение"
+            data-book-price="от 34 000 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="service-ultrasound" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Гинекологическое УЗИ</h3>
+          <p>
+            Плановые и экспертные УЗИ-исследования с подробным разбором
+            результатов и рекомендациями.
+          </p>
+          <p><strong>Кто принимает:</strong> Соколова Инна Денисовна</p>
+          <p><strong>Цена:</strong> от 4 500 ₽</p>
+          <a
+            href="#booking-modal"
+            class="btn btn-primary open-booking-btn"
+            data-book-service="Гинекологическое УЗИ"
+            data-book-price="от 4 500 ₽"
+          >
+            Записаться
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-marina" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Марина, 23 декабря 2024</h3>
+          <p>
+            Хочу поблагодарить всех сотрудников роддома за их труд и заботу!
+            Удивительное отношение к мамочкам в этой клинике. Я боялась, что
+            что-то пойдет не так, как и многие, кто ждёт ребёнка))) Но всё
+            прошло даже лучше, чем я ожидала.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-mary" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Мэри, 27 декабря 2024</h3>
+          <p>
+            Все плановые скрининги проходила у Юлии Юрьевны Дьяченко! Девочки,
+            это самый лучший врач УЗИ. Очень внимательная, нежная и деликатная.
+            Если бы не рекомендация знакомой, то я так бы и не узнала о Юлии
+            Юрьевне.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-ekaterina" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Пузикова Екатерина, 11 января 2025</h3>
+          <p>
+            Рожала в сентябре 2024 у Оксаны Анатольевны Горбулиной. Был большой
+            страх после первых родов. Но все прошло прекрасно. Родила путем
+            кесарева, со мной и ребёнком все отлично. Отдельная благодарность
+            анестезиологу. Отношение и работа врачей и всего персонала выше
+            всех похвал. Условия также соответствующие.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-olga" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Ольга, 18 января 2025</h3>
+          <p>
+            Вели беременность с первого триместра. Всегда на связи, очень
+            аккуратный подход и понятные рекомендации. На каждом этапе была
+            уверенность, что мы в надежных руках.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-alina" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Алина, 02 февраля 2025</h3>
+          <p>
+            Делала плановые УЗИ и чек-ап. Все спокойно, без суеты, подробно
+            объясняют результаты и дальнейший план. Очень комфортная атмосфера.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-svetlana" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Светлана, 19 февраля 2025</h3>
+          <p>
+            Отличная команда в родблоке, поддерживали на каждом этапе. Отдельное
+            спасибо неонатологу за внимательность и подробные ответы после
+            родов.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-evgeniya" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Евгения, 03 марта 2025</h3>
+          <p>
+            После родов оформила программу сопровождения 0-1 года. Консультации
+            очень помогают в первые месяцы, особенно по вопросам сна и питания
+            малыша.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="review-tatyana" class="modal-overlay">
+      <article class="modal-card panel">
+        <a class="modal-close" href="#reviews">Закрыть</a>
+        <div class="modal-text">
+          <h3>Татьяна, 14 марта 2025</h3>
+          <p>
+            Было плановое кесарево, все организовано четко. Врач и анестезиолог
+            заранее все проговорили, было спокойно. Реабилитация прошла мягко.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div id="booking-modal" class="modal-overlay">
+      <article class="modal-card panel booking-modal-card">
+        <a class="modal-close" href="#services">Закрыть</a>
+        <div class="modal-text">
+          <h3>Запись на услугу</h3>
+          <form id="booking-form" class="booking-form">
+            <label class="booking-field">
+              <span>Выбор услуги</span>
+              <div class="booking-select-wrap" id="booking-dropdown">
+                <button
+                  type="button"
+                  class="booking-dropdown-trigger"
+                  id="booking-dropdown-trigger"
+                  aria-expanded="false"
+                  aria-controls="booking-dropdown-menu"
+                >
+                  <span id="booking-dropdown-label">Естественные роды</span>
+                  <span class="booking-select-icon" aria-hidden="true">⌄</span>
+                </button>
+                <div class="booking-dropdown-menu" id="booking-dropdown-menu" role="listbox">
+                  <button
+                    type="button"
+                    class="booking-option is-selected"
+                    data-service="Естественные роды"
+                    data-price="от 110 000 ₽"
+                  >
+                    Естественные роды
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Консервативные роды"
+                    data-price="от 125 000 ₽"
+                  >
+                    Консервативные роды
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Кесарево сечение"
+                    data-price="от 175 000 ₽"
+                  >
+                    Кесарево сечение
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Роды с сопровождением"
+                    data-price="от 140 000 ₽"
+                  >
+                    Роды с сопровождением
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Ведение беременности"
+                    data-price="от 65 000 ₽"
+                  >
+                    Ведение беременности
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Женский чек-ап"
+                    data-price="от 19 900 ₽"
+                  >
+                    Женский чек-ап
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Послеродовое сопровождение"
+                    data-price="от 34 000 ₽"
+                  >
+                    Послеродовое сопровождение
+                  </button>
+                  <button
+                    type="button"
+                    class="booking-option"
+                    data-service="Гинекологическое УЗИ"
+                    data-price="от 4 500 ₽"
+                  >
+                    Гинекологическое УЗИ
+                  </button>
+                </div>
+              </div>
+              <input id="booking-service" name="service" type="hidden" value="Естественные роды" />
+            </label>
+
+            <label class="booking-field">
+              <span>Цена</span>
+              <div id="booking-price" class="booking-price-view" aria-live="polite">
+                от 110 000 ₽
+              </div>
+              <input id="booking-price-hidden" name="price" type="hidden" value="от 110 000 ₽" />
+            </label>
+
+            <label class="booking-field">
+              <span>ФИО</span>
+              <input
+                id="booking-name"
+                name="name"
+                type="text"
+                placeholder="Введите ФИО"
+                required
+              />
+            </label>
+
+            <label class="booking-field">
+              <span>Номер телефона</span>
+              <input
+                id="booking-phone"
+                name="phone"
+                type="tel"
+                placeholder="+7 (___) ___-__-__"
+                required
+              />
+            </label>
+
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </form>
+          <p id="booking-feedback" class="booking-feedback" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
