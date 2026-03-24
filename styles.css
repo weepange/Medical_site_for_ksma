@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background: linear-gradient(120deg, #f5f3f3, #f9ecec 42%, #f5f5f5);
+  overflow-x: hidden;
 }
 
 code {
@@ -124,13 +126,17 @@ code {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 12px 22px;
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
+  min-height: 44px;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -301,6 +307,7 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   padding: 6px 2px 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .services-track::-webkit-scrollbar,
@@ -354,10 +361,20 @@ h3 {
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
-  font-size: 0.86rem;
-  color: #fff;
+  font-size: 0;
+  color: transparent;
+  position: relative;
   background: #b7ab9e;
   flex: 0 0 22px;
+}
+
+.service-arrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
 }
 
 .service-photo {
@@ -411,6 +428,7 @@ h3 {
   padding: 6px 2px 2px;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .team-row::-webkit-scrollbar {
@@ -501,6 +519,7 @@ h3 {
   overflow-x: auto;
   padding: 6px 2px 10px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .review-square {
@@ -914,8 +933,8 @@ h3 {
 
 @media (max-width: 720px) {
   .layout {
-    width: calc(100% - 16px);
-    margin-top: 8px;
+    width: calc(100% - 12px);
+    margin-top: 6px;
   }
 
   .header,
@@ -930,7 +949,11 @@ h3 {
   }
 
   .header {
-    padding: 16px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
   }
 
   .brand-mark {
@@ -938,74 +961,272 @@ h3 {
     height: 44px;
   }
 
+  .brand {
+    min-width: 0;
+  }
+
   .brand-title {
     font-size: 1rem;
+    line-height: 1.2;
   }
 
   .brand-subtitle {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .nav {
-    gap: 12px;
-    flex-wrap: wrap;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0 2px;
+    margin-top: 2px;
+    scroll-snap-type: x proximity;
+  }
+
+  .nav::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    font-size: 0.88rem;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 173, 173, 0.32);
+    background: rgba(252, 223, 223, 0.26);
+  }
+
+  .header > .btn {
+    justify-self: end;
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 
   .hero {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 8.6vw, 2.2rem);
+  }
+
+  .tagline {
+    font-size: clamp(1.2rem, 6vw, 1.7rem);
+    margin-bottom: 12px;
+  }
+
+  .hero-text {
+    margin-bottom: 16px;
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 
   .hero-photo {
-    min-height: 380px;
+    min-height: 440px;
+  }
+
+  .replace-hint {
+    font-size: 0.76rem;
+    line-height: 1.35;
   }
 
   .about {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    gap: 16px;
+  }
+
+  .about-points {
+    gap: 10px;
+  }
+
+  .about-points li {
+    padding: 12px;
+    font-size: 0.92rem;
   }
 
   .section-head {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 10px;
   }
 
   .services-track {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 6px 2px 8px;
+    scroll-snap-type: x mandatory;
   }
 
   .service-tile {
-    min-height: 262px;
+    flex: 0 0 min(84vw, 320px);
+    scroll-snap-align: start;
+    min-height: 304px;
     padding: 14px;
   }
 
-  .service-photo {
-    height: 100%;
+  .service-photo-wrap {
+    height: 56%;
   }
 
   .doctor-tile {
-    flex-basis: 220px;
-    min-height: 252px;
+    flex: 0 0 min(84vw, 320px);
+    min-height: 332px;
   }
 
   .doctor-thumb {
-    height: 156px;
+    height: 228px;
+  }
+
+  .team-nav {
+    display: none;
   }
 
   .review-square {
-    flex-basis: 270px;
+    flex: 0 0 min(84vw, 320px);
+    padding: 16px;
+  }
+
+  .review-square h3 {
+    font-size: 1.2rem;
+  }
+
+  .review-square p {
+    font-size: 0.92rem;
   }
 
   .footer {
-    padding: 20px 16px;
+    padding: 18px 14px;
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .footer-map,
+  .footer-map iframe {
+    min-height: 220px;
+  }
+
+  .modal-overlay {
+    padding: 10px 8px max(12px, env(safe-area-inset-bottom));
+    align-items: flex-end;
   }
 
   .modal-card {
-    padding: 18px;
+    width: 100%;
+    padding: 16px;
+    max-height: min(90vh, 90dvh);
+    overscroll-behavior: contain;
   }
 
   .modal-close {
     position: static;
     display: inline-block;
     margin-bottom: 10px;
+  }
+
+  .booking-modal-card {
+    max-height: min(92vh, 92dvh);
+  }
+
+  .booking-field input,
+  .booking-dropdown-trigger,
+  .booking-price-view,
+  .booking-option {
+    font-size: 16px;
+  }
+
+  .booking-dropdown-menu {
+    max-height: min(250px, 42dvh);
+  }
+
+  .booking-form .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .layout {
+    width: calc(100% - 10px);
+  }
+
+  .header {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+  }
+
+  .brand-title {
+    font-size: 0.93rem;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .header > .btn {
+    padding: 9px 14px;
+    font-size: 0.86rem;
+  }
+
+  .hero {
+    padding: 16px 12px;
+  }
+
+  .hero-photo {
+    min-height: 380px;
+  }
+
+  .services-track,
+  .team-row,
+  .reviews-row {
+    gap: 10px;
+  }
+
+  .service-tile,
+  .doctor-tile,
+  .review-square {
+    flex-basis: min(88vw, 312px);
+  }
+
+  .doctor-thumb {
+    height: 212px;
+  }
+
+  .footer {
+    padding: 16px 12px;
+  }
+
+  .modal-overlay {
+    padding: 8px 6px max(10px, env(safe-area-inset-bottom));
+  }
+
+  .modal-card {
+    padding: 14px;
+    border-radius: 18px;
   }
 }

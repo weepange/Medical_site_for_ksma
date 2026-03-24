@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const hasFinePointer =
+    window.matchMedia && window.matchMedia("(pointer: fine)").matches;
   const scrollRows = document.querySelectorAll(".team-row, .reviews-row");
 
-  scrollRows.forEach((row) => {
-    row.addEventListener(
-      "wheel",
-      (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-        event.preventDefault();
-        row.scrollBy({ left: event.deltaY, behavior: "smooth" });
-      },
-      { passive: false }
-    );
-  });
+  if (hasFinePointer) {
+    scrollRows.forEach((row) => {
+      row.addEventListener(
+        "wheel",
+        (event) => {
+          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+          event.preventDefault();
+          row.scrollBy({ left: event.deltaY, behavior: "smooth" });
+        },
+        { passive: false }
+      );
+    });
+  }
 
   const revealTargets = document.querySelectorAll(
     ".hero, .about, .services .section-head, .services-track, .team .section-head, .team-row, .reviews .section-head, .reviews-row, .footer"
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cardTargets.forEach((node) => observer.observe(node));
 
   const heroPhoto = document.querySelector(".hero-photo");
-  if (heroPhoto) {
+  if (heroPhoto && hasFinePointer) {
     heroPhoto.addEventListener("mousemove", (event) => {
       const rect = heroPhoto.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
