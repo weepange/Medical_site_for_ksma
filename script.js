@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bookingButtons = document.querySelectorAll(".open-booking-btn");
   const bookingForm = document.getElementById("booking-form");
+  const bookingModalClose = document.querySelector("#booking-modal .modal-close");
   const bookingDropdown = document.getElementById("booking-dropdown");
   const bookingDropdownTrigger = document.getElementById("booking-dropdown-trigger");
   const bookingDropdownLabel = document.getElementById("booking-dropdown-label");
@@ -86,6 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookingService = document.getElementById("booking-service");
   const bookingPrice = document.getElementById("booking-price");
   const bookingPriceHidden = document.getElementById("booking-price-hidden");
+  const bookingName = document.getElementById("booking-name");
+  const bookingPhone = document.getElementById("booking-phone");
+  const bookingDate = document.getElementById("booking-date");
+  const bookingNameError = document.getElementById("booking-name-error");
+  const bookingPhoneError = document.getElementById("booking-phone-error");
+  const bookingDateError = document.getElementById("booking-date-error");
   const bookingFeedback = document.getElementById("booking-feedback");
 
   const setBookingSelection = (service, forcedPrice) => {
@@ -109,6 +116,152 @@ document.addEventListener("DOMContentLoaded", () => {
     if (bookingPriceHidden) {
       bookingPriceHidden.value = priceValue;
     }
+  };
+
+  const closeBookingModal = () => {
+    if (bookingModalClose && typeof bookingModalClose.click === "function") {
+      bookingModalClose.click();
+      return;
+    }
+    if (window.location.hash === "#booking-modal") {
+      window.location.hash = "#services";
+    }
+  };
+
+  const clearFieldError = (input, errorNode) => {
+    if (input) input.classList.remove("is-invalid");
+    if (errorNode) errorNode.textContent = "";
+  };
+
+  const setFieldError = (input, errorNode, message) => {
+    if (input) input.classList.add("is-invalid");
+    if (errorNode) errorNode.textContent = message;
+  };
+
+  const formatPhone = (rawValue) => {
+    let digits = (rawValue || "").replace(/\D/g, "");
+    if (digits.startsWith("8")) {
+      digits = `7${digits.slice(1)}`;
+    } else if (digits.length > 0 && !digits.startsWith("7")) {
+      digits = `7${digits}`;
+    }
+    digits = digits.slice(0, 11);
+
+    let formatted = "+7";
+    if (digits.length > 1) {
+      formatted += ` (${digits.slice(1, 4)}`;
+    }
+    if (digits.length >= 4) {
+      formatted += ")";
+    }
+    if (digits.length > 4) {
+      formatted += ` ${digits.slice(4, 7)}`;
+    }
+    if (digits.length > 7) {
+      formatted += `-${digits.slice(7, 9)}`;
+    }
+    if (digits.length > 9) {
+      formatted += `-${digits.slice(9, 11)}`;
+    }
+    return formatted;
+  };
+
+  const validateName = () => {
+    if (!bookingName) return true;
+    const value = bookingName.value.trim().replace(/\s+/g, " ");
+    bookingName.value = value;
+    clearFieldError(bookingName, bookingNameError);
+
+    if (!value) {
+      setFieldError(bookingName, bookingNameError, "Введите ФИО.");
+      return false;
+    }
+
+    if (!/^[A-Za-zА-Яа-яЁё\-\s]+$/.test(value)) {
+      setFieldError(
+        bookingName,
+        bookingNameError,
+        "ФИО может содержать только буквы, пробел и дефис."
+      );
+      return false;
+    }
+
+    const parts = value.split(" ").filter(Boolean);
+    if (parts.length < 2) {
+      setFieldError(
+        bookingName,
+        bookingNameError,
+        "Укажите минимум фамилию и имя."
+      );
+      return false;
+    }
+
+    if (parts.some((part) => part.length < 2)) {
+      setFieldError(
+        bookingName,
+        bookingNameError,
+        "Слишком короткое ФИО. Проверьте ввод."
+      );
+      return false;
+    }
+
+    return true;
+  };
+
+  const validatePhone = () => {
+    if (!bookingPhone) return true;
+    bookingPhone.value = formatPhone(bookingPhone.value);
+    clearFieldError(bookingPhone, bookingPhoneError);
+
+    const digits = bookingPhone.value.replace(/\D/g, "");
+    if (digits.length !== 11 || !digits.startsWith("7")) {
+      setFieldError(
+        bookingPhone,
+        bookingPhoneError,
+        "Введите корректный номер в формате +7 (XXX) XXX-XX-XX."
+      );
+      return false;
+    }
+
+    return true;
+  };
+
+  const setBookingDateDefaults = () => {
+    if (!bookingDate) return;
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const isoToday = `${year}-${month}-${day}`;
+    bookingDate.min = isoToday;
+    if (!bookingDate.value) {
+      bookingDate.value = isoToday;
+    }
+  };
+
+  const validateDate = () => {
+    if (!bookingDate) return true;
+    clearFieldError(bookingDate, bookingDateError);
+
+    if (!bookingDate.value) {
+      setFieldError(bookingDate, bookingDateError, "Выберите дату записи.");
+      return false;
+    }
+
+    const selected = new Date(`${bookingDate.value}T00:00:00`);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (selected < today) {
+      setFieldError(
+        bookingDate,
+        bookingDateError,
+        "Дата не может быть раньше сегодняшней."
+      );
+      return false;
+    }
+
+    return true;
   };
 
   if (bookingDropdown && bookingDropdownTrigger) {
@@ -150,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     setBookingSelection("Естественные роды", "от 110 000 ₽");
+    setBookingDateDefaults();
   }
 
   bookingButtons.forEach((button) => {
@@ -166,16 +320,68 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       bookingFeedback.textContent = "";
+      setBookingDateDefaults();
     });
   });
+
+  if (bookingName) {
+    bookingName.addEventListener("input", () => {
+      if (bookingName.classList.contains("is-invalid")) {
+        validateName();
+      }
+    });
+    bookingName.addEventListener("blur", validateName);
+  }
+
+  if (bookingPhone) {
+    bookingPhone.addEventListener("input", () => {
+      bookingPhone.value = formatPhone(bookingPhone.value);
+      if (bookingPhone.classList.contains("is-invalid")) {
+        validatePhone();
+      }
+    });
+    bookingPhone.addEventListener("blur", validatePhone);
+  }
+
+  if (bookingDate) {
+    bookingDate.addEventListener("change", () => {
+      validateDate();
+    });
+    bookingDate.addEventListener("blur", validateDate);
+    setBookingDateDefaults();
+  }
 
   if (bookingForm && bookingFeedback) {
     bookingForm.addEventListener("submit", (event) => {
       event.preventDefault();
+      const isNameValid = validateName();
+      const isPhoneValid = validatePhone();
+      const isDateValid = validateDate();
+
+      if (!isNameValid || !isPhoneValid || !isDateValid) {
+        bookingFeedback.textContent =
+          "Проверьте корректность ФИО, телефона и даты записи.";
+        bookingFeedback.style.color = "#cb6666";
+        return;
+      }
+
       bookingFeedback.textContent =
         "Заявка принята. Мы свяжемся с вами в ближайшее время.";
+      bookingFeedback.style.color = "#5b5b5b";
       bookingForm.reset();
+      clearFieldError(bookingName, bookingNameError);
+      clearFieldError(bookingPhone, bookingPhoneError);
+      clearFieldError(bookingDate, bookingDateError);
       setBookingSelection("Естественные роды", "от 110 000 ₽");
+      setBookingDateDefaults();
+
+      if (bookingDropdown) {
+        bookingDropdown.classList.remove("is-open");
+      }
+      if (bookingDropdownTrigger) {
+        bookingDropdownTrigger.setAttribute("aria-expanded", "false");
+      }
+      closeBookingModal();
     });
   }
 });

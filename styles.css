@@ -858,6 +858,18 @@ h3 {
   box-shadow: 0 0 0 3px rgba(217, 173, 173, 0.2);
 }
 
+.booking-field input.is-invalid {
+  border-color: #de7b7b;
+  box-shadow: 0 0 0 3px rgba(222, 123, 123, 0.16);
+}
+
+.booking-field-error {
+  min-height: 16px;
+  margin: 0;
+  font-size: 0.78rem;
+  color: #cb6666;
+}
+
 .booking-feedback {
   min-height: 22px;
   margin: 10px 0 0;

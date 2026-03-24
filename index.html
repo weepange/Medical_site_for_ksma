@@ -277,7 +277,7 @@
 
         <section id="reviews" class="reviews">
           <div class="section-head">
-            <h2>Отзывы пациенток</h2>
+            <h2>Отзывы пациентов</h2>
             <p>Квадратные карточки с горизонтальной прокруткой</p>
           </div>
           <div class="reviews-row">
@@ -898,8 +898,10 @@
                 name="name"
                 type="text"
                 placeholder="Введите ФИО"
+                autocomplete="name"
                 required
               />
+              <p id="booking-name-error" class="booking-field-error" aria-live="polite"></p>
             </label>
 
             <label class="booking-field">
@@ -909,8 +911,23 @@
                 name="phone"
                 type="tel"
                 placeholder="+7 (___) ___-__-__"
+                autocomplete="tel"
+                inputmode="tel"
+                maxlength="18"
                 required
               />
+              <p id="booking-phone-error" class="booking-field-error" aria-live="polite"></p>
+            </label>
+
+            <label class="booking-field">
+              <span>Дата записи</span>
+              <input
+                id="booking-date"
+                name="date"
+                type="date"
+                required
+              />
+              <p id="booking-date-error" class="booking-field-error" aria-live="polite"></p>
             </label>
 
             <button type="submit" class="btn btn-primary">Отправить заявку</button>
