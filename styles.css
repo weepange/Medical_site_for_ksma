@@ -7,21 +7,21 @@
   --shadow: 0 16px 36px rgba(131, 131, 131, 0.16);
   --radius-lg: 28px;
   --radius-md: 22px;
-  --hero-photo-url: url("./images/hero/your-pregnant-photo.jpg");
+  --hero-photo-url: url("./images/hero/pregrant.jpg");
   --photo-vlasova: url("./images/doctors/vlasova.jpg");
-  --photo-ermolova: url("./images/doctors/ermolova.jpg");
+  --photo-ermolova: url("./images/doctors/ermolova.png");
   --photo-roshchina: url("./images/doctors/roshchina.jpg");
   --photo-morozov: url("./images/doctors/morozov.jpg");
   --photo-sokolova: url("./images/doctors/sokolova.jpg");
   --photo-panin: url("./images/doctors/panin.jpg");
-  --service-photo-natural: url("./images/services/natural.jpg");
-  --service-photo-conservative: url("./images/services/conservative.jpg");
-  --service-photo-c-section: url("./images/services/c-section.jpg");
-  --service-photo-support: url("./images/services/support.jpg");
-  --service-photo-pregnancy: url("./images/services/pregnancy.jpg");
-  --service-photo-checkup: url("./images/services/checkup.jpg");
-  --service-photo-postpartum: url("./images/services/postpartum.jpg");
-  --service-photo-ultrasound: url("./images/services/ultrasound.jpg");
+  --service-photo-natural: url("./images/services/natural.png");
+  --service-photo-conservative: url("./images/services/conservative.png");
+  --service-photo-c-section: url("./images/services/c-section.png");
+  --service-photo-support: url("./images/services/support.png");
+  --service-photo-pregnancy: url("./images/services/pregnancy.png");
+  --service-photo-checkup: url("./images/services/checkup.png");
+  --service-photo-postpartum: url("./images/services/postpartum.png");
+  --service-photo-ultrasound: url("./images/services/ultrasound.png");
 }
 
 * {
