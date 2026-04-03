@@ -8,12 +8,12 @@
   --radius-lg: 28px;
   --radius-md: 22px;
   --hero-photo-url: url("./images/hero/pregrant.jpg");
-  --photo-vlasova: url("./images/doctors/vlasova.jpg");
+  --photo-vlasova: url("./images/doctors/vlasova.png");
   --photo-ermolova: url("./images/doctors/ermolova.png");
-  --photo-roshchina: url("./images/doctors/roshchina.jpg");
-  --photo-morozov: url("./images/doctors/morozov.jpg");
-  --photo-sokolova: url("./images/doctors/sokolova.jpg");
-  --photo-panin: url("./images/doctors/panin.jpg");
+  --photo-roshchina: url("./images/doctors/roshchina.png");
+  --photo-morozov: url("./images/doctors/morozov.png");
+  --photo-sokolova: url("./images/doctors/sokolova.png");
+  --photo-panin: url("./images/doctors/panin.png");
   --service-photo-natural: url("./images/services/natural.png");
   --service-photo-conservative: url("./images/services/conservative.png");
   --service-photo-c-section: url("./images/services/c-section.png");
@@ -461,7 +461,7 @@ h3 {
     var(--doctor-photo),
     linear-gradient(145deg, #f2f2f2, #e3dede);
   background-size: cover, cover;
-  background-position: center;
+  background-position: center 22%, center;
   border: 1px solid rgba(131, 131, 131, 0.2);
   position: relative;
   overflow: hidden;
@@ -680,20 +680,23 @@ h3 {
 
 .modal-profile {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: minmax(240px, 300px) 1fr;
   gap: 18px;
   align-items: start;
 }
 
 .modal-photo {
-  min-height: 320px;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
   border-radius: 16px;
   border: 1px solid rgba(131, 131, 131, 0.2);
   background-image:
     var(--doctor-photo),
     linear-gradient(145deg, #f2f2f2, #e3dede);
   background-size: cover, cover;
-  background-position: center;
+  background-position: center 18%, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .modal-profile h3 {
@@ -922,12 +925,9 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .modal-profile {
-    grid-template-columns: 1fr;
-  }
-
   .modal-photo {
-    min-height: 260px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -1132,6 +1132,10 @@ h3 {
     padding: 16px;
     max-height: min(90vh, 90dvh);
     overscroll-behavior: contain;
+  }
+
+  .modal-profile {
+    grid-template-columns: 1fr;
   }
 
   .modal-close {
